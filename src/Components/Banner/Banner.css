@@ -11,14 +11,36 @@
     margin-bottom: 6px;
 }
 
-.subTitulo{
+.subTitulo1{
     text-align: start;
     font-weight: 400;
     margin-bottom: 0px;
+    font-size: 22px !important;
+    height: 52px;
+}
+
+span.uno:before{
+    text-align: start;
+    font-weight: 600;
+    margin-bottom: 0px;
+    font-size: 22px !important;
+    content: '';
+    animation-name: head;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes head {
+    0% {opacity:'1';content: " Profesionales de la salud";color: #8980F5;}
+    20% {opacity:'1';content: " Profesionales de la salud";}
+    30% {opacity:'1';content: " Psicologos";color: #08E4D6;}
+    60% {opacity:'1';content: " Estudiantes";}
+    100% {opacity:'1';content: " Docentes";color: #4658F8;}
 }
 
 .foto{
     width: 60% !important;
+    padding-left: 12px;
 }
 
 .botonC{
@@ -29,11 +51,14 @@
     text-decoration: none !important;
     background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
     margin-top: 22px;
+    margin-left: 12px;
     background: #4658F8;
     color: #fff;
     z-index: 10000;
     padding-top: 12px;
     padding-bottom: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
     transform: scale(1.0);
     transition: .7s;
 }
@@ -56,6 +81,8 @@
     .Titulo{
         text-align: start;
         margin-top: 0px;
+        font-size: 60px;
+        font-weight: 400;
     }
 
     .subTitulo{
@@ -64,5 +91,30 @@
 
     .foto{
         width: 30% !important;
+        padding-left: 0px;
+    }
+
+    .subTitulo2{
+        text-align: start;
+        font-weight: 400;
+        margin-bottom: 0px;
+        font-size: 30px;
+    }
+    
+    span.dos:before{
+        text-align: start;
+        font-weight: 600;
+        margin-bottom: 0px;
+        content: '';
+        animation-name: head;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+    }
+    @keyframes head {
+        0% {opacity:'1';content: " Profesionales de la salud";color: #8980F5;}
+        20% {opacity:'1';content: " Profesionales de la salud";}
+        30% {opacity:'1';content: " Psicologos";color: #08E4D6;}
+        60% {opacity:'1';content: " Estudiantes";}
+        100% {opacity:'1';content: " Docentes";color: #4658F8;}
     }
 }
