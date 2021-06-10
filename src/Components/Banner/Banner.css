@@ -1,5 +1,7 @@
 .banner{
-    margin-top: 10%;
+    height: 80vh;
+    display: flex;
+    align-content: center;
 }
 
 .Titulo{
@@ -19,7 +21,9 @@
 
 @media (min-width: 768px) {
     .banner{
-        margin-top: 5%;
+        height: 70vh;
+        display: flex;
+        align-content: center;
     }
 
     .Titulo{

@@ -44,7 +44,7 @@ a.logo{
     }
 
     .links a.navLinks{
-        color: #212529 ;
+        color: #123C5E;
         font-size: 17px;
         font-weight: 500;
         text-decoration: none;
@@ -55,6 +55,11 @@ a.logo{
         position: relative;
         text-decoration: none;
     }
+
+    .links a.navLinks:hover{
+        color: #4658F8;
+    }
+
     .nombre{
         text-align: start;
     }
@@ -125,10 +130,13 @@ a.logo{
           border-color: transparent;
           font-weight: 500;
           font-size: 17px;
-          color: #212529;
+          color: #123C5E;
       }
     #dropdown-basic::after{
           display: none;
+    }
+    #dropdown-basic:hover{
+        color: #4658F8;
     }
     #dropdown-basic:focus{
         box-shadow: none;
