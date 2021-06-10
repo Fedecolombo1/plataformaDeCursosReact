@@ -3,6 +3,7 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dropdown from 'react-bootstrap/Dropdown'
 import "bootstrap/dist/css/bootstrap.min.css";
+import CardWidget from '../CartWidget/CardWidget'
 
 function NavBar() {
 
@@ -36,14 +37,15 @@ function NavBar() {
             <h2 className="col-2 align links"><a className="navLinks" href="#contacto"> Formacion</a></h2>
             <h2 className="col-2 align links"><a className="navLinks" href="#estudios1"> Nosotros</a></h2>
             <h2 className="col-2 align links"><a className="navLinks" href="#estudios1"> Contacto</a></h2>
+            <CardWidget />
         </div>
         <a className="col-2" style={{justifyContent: 'flex-end', display:'flex', textDecoration:'none'}} href="https://fedecolombo1.github.io/Home/"><button style={{marginRight:'6%'}} className="col-6 botonC">Ver Cursos</button></a>
         
       </header>
 
       <header className="row col-12 align mobile">
-        <nav className="col-6 row align navbar">
-          <div className="menu-mobile col-12">
+        <nav className="col-4 align navbar">
+          <div className="menu-mobile">
             <button id="bt-menu-mobile">
               <span className="top"></span>
               <span className="middle"></span>
@@ -53,9 +55,9 @@ function NavBar() {
           </div>
         </nav>
 
-        <a className="col-6 row align logo" href="https://fedecolombo1.github.io/Home/">
-          <h1 className="col-12 nombre">-LOGO</h1>
-        </a>
+        <a className="col-4 row align nombre" href="https://fedecolombo1.github.io/Home/">-LOGO</a>
+
+        <CardWidget />
       </header>
     </>
   );

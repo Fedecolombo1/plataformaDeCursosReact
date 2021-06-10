@@ -5,18 +5,45 @@
 }
 
 .Titulo{
-    text-align: center;
+    text-align: start;
     color: #123C5E;
+    margin-top: 12px;
+    margin-bottom: 6px;
 }
 
 .subTitulo{
-    text-align: center;
+    text-align: start;
     font-weight: 400;
+    margin-bottom: 0px;
 }
 
 .foto{
-    margin-top: 40px;
     width: 60% !important;
+}
+
+.botonC{
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none !important;
+    background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
+    margin-top: 22px;
+    background: #4658F8;
+    color: #fff;
+    z-index: 10000;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    transform: scale(1.0);
+    transition: .7s;
+}
+  
+.botonC:hover{
+    background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    background: #08E4D6;
+    color: #4658F8;
+    transform: scale(1.1);
+    transition: .7s;
 }
 
 @media (min-width: 768px) {
@@ -28,6 +55,7 @@
 
     .Titulo{
         text-align: start;
+        margin-top: 0px;
     }
 
     .subTitulo{
@@ -35,7 +63,6 @@
     }
 
     .foto{
-        margin-top: 0px;
         width: 30% !important;
     }
 }

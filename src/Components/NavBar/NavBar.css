@@ -1,17 +1,21 @@
+header.mobile{
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
 .nombre{
     color: #212529 !important;
-    font-size: 38px;
-    margin-left: 6%;
+    font-size: 32px;
+    margin: 0;
     text-align: end;
     text-decoration: underline #4658F8 !important;
 }
 
 nav{
     background-color: #fff;
-}
-
-.navbar{
-    padding: 10px !important;
 }
 
 a.logo{
@@ -61,7 +65,8 @@ a.logo{
     }
 
     .nombre{
-        text-align: start;
+        text-align: start !important;
+        margin-left: 20px !important;
     }
 
     .links > a::before {
@@ -121,7 +126,7 @@ a.logo{
     .botonC:hover{
         background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
         background: #08E4D6;
-        color: #123C5E;
+        color: #4658F8;
         transform: scale(1.1);
         transition: .7s;
       }
@@ -144,8 +149,19 @@ a.logo{
 
     .dropdown-menu.show{
         height: 150px;
-        width: 300px;
-        margin-left: -30px !important;
+        width: 150px;
+        border: none;
+        border-left: 3px solid #4658F8 !important;
+        border-radius: 4px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        border: none;
+        display: inline-grid !important;
+        align-content: center;
+    }
+
+    a.dropdown-item{
+        color: grey;
+        font-size: 17px;
     }
      
 }  
