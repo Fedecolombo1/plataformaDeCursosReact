@@ -5,12 +5,31 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import "bootstrap/dist/css/bootstrap.min.css";
 import CardWidget from '../CartWidget/CardWidget'
 
-function NavBar() {
+const NavBar = () => {
+
+  /* Burger menu
+    const burger = () => {
+    var burger = document.getElementsByClassName('burger');
+    var links = document.getElementById('links');
+    var quit = document.getElementById('quit');
+    burger.style.padding = '16px 16px 200vw 200vw';
+    links.style.display = 'flex';
+    quit.style.display = 'inline';
+  }
+  
+  function quit(){
+    var burger = document.getElementsByClassName('burger');
+    var links = document.getElementById('links');
+    var quit = document.getElementById('quit');
+    burger.style.padding = '16px 16px 32px 32px';
+    links.style.display = 'none';
+    quit.style.display = 'none';
+  } */
 
   return (
     <>
       <header className="navbar col-12 desk">
-        <a className="col-2" href="https://fedecolombo1.github.io/Home/"><h1 className="col-12 nombre">-LOGO</h1></a>
+        <a className="col-2" href="https://fedecolombo1.github.io/Home/"><h1 className="col-12 nombre">Escala</h1></a>
         <div className="col-6 row align">
             <Dropdown menualign="center" className="col-2 align links">
               <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -53,9 +72,14 @@ function NavBar() {
             </button>
             <div className="clear"></div>
           </div>
+          <div id="links">
+            <a href="/null">Home</a>
+            <a href="/null">About</a>
+            <a href="/null">Contact</a>
+          </div>
         </nav>
 
-        <a className="col-4 row align nombre" href="https://fedecolombo1.github.io/Home/">-LOGO</a>
+        <a className="col-4 row align nombre" href="https://fedecolombo1.github.io/Home/">Escala</a>
 
         <CardWidget />
       </header>

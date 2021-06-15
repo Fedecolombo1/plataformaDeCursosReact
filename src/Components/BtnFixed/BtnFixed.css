@@ -1,0 +1,12 @@
+a.btnFixed.col-12.mobile{
+    position: fixed;
+    bottom: 0;
+    padding: 16px 28px;
+    background-color: #8980F5;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    z-index: 100000;
+    font-weight: 600;
+    font-size: 20px;
+}

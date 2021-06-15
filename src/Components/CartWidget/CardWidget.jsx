@@ -2,7 +2,7 @@ import "./CartWidget.css";
 import {faShoppingBag} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function Banner() {
+const CartWidget = () => {
 
   return (
     <div className='col-4 col-lg-2 align cartDiv'>
@@ -14,4 +14,4 @@ function Banner() {
   
 }
 
-export default Banner;
+export default CartWidget;

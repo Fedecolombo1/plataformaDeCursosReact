@@ -1,0 +1,58 @@
+.TituloSec{
+    font-size: 30px;
+    justify-content: start;
+    padding: 0;
+    color: white;
+}
+
+h1.TituloSec {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 28px;
+    background: #fff;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease-out;
+    white-space: nowrap;
+  }
+  
+  span.tituloSecSpan {
+    position: relative;
+    padding: 0px;
+  }
+  
+  span.tituloSecSpan:before {
+    content: "";
+    position: absolute;
+    width: 92%;
+    left: 0;
+    right: 0;
+    height: 26px;
+    background: #4658F8;
+    bottom: 9px;
+    transition: all 0.2s ease-out;
+    border-radius: 2px;
+  }
+
+  @media (min-width: 768px) {
+    span.tituloSecSpan:before {
+      content: "";
+      position: absolute;
+      width: 21%;
+      left: 0;
+      right: 0;
+      height: 26px;
+      background: #4658F8;
+      bottom: 9px;
+      transition: all 0.2s ease-out;
+      border-radius: 2px;
+    }
+
+    .products{
+      justify-content: start;
+    }
+  }
+  

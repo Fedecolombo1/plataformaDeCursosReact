@@ -2,16 +2,27 @@
     height: 80vh;
     display: flex;
     align-content: center;
+    background-image: url('https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png');
+    background-position: center;
+    background-size: 145%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-bottom: 70px;
+    background-color: #123C5E;
+    background-attachment: scroll;
 }
 
 .Titulo{
     text-align: start;
-    color: #123C5E;
+    color: #fff;
     margin-top: 12px;
     margin-bottom: 6px;
+    font-size: 38px;
+    font-weight: 200;
 }
 
 .subTitulo1{
+    color: #fff;
     text-align: start;
     font-weight: 400;
     margin-bottom: 0px;
@@ -28,14 +39,15 @@ span.uno:before{
     animation-name: head;
     animation-duration: 8s;
     animation-iteration-count: infinite;
+    color: #08E4D6;
 }
 
 @keyframes head {
-    0% {opacity:'1';content: " Profesionales de la salud";color: #8980F5;}
+    0% {opacity:'1';content: " Profesionales de la salud";}
     20% {opacity:'1';content: " Profesionales de la salud";}
-    30% {opacity:'1';content: " Psicologos";color: #08E4D6;}
+    30% {opacity:'1';content: " Psicologos";}
     60% {opacity:'1';content: " Estudiantes";}
-    100% {opacity:'1';content: " Docentes";color: #4658F8;}
+    100% {opacity:'1';content: " Docentes";}
 }
 
 .foto{
@@ -43,7 +55,7 @@ span.uno:before{
     padding-left: 12px;
 }
 
-.botonC{
+.botonC.saberMas{
     border: none;
     font-size: 17px;
     font-weight: 600;
@@ -52,6 +64,7 @@ span.uno:before{
     background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
     margin-top: 22px;
     margin-left: 12px;
+    margin-bottom: 122px;
     background: #4658F8;
     color: #fff;
     z-index: 10000;
@@ -63,7 +76,7 @@ span.uno:before{
     transition: .7s;
 }
   
-.botonC:hover{
+.botonC.botonC.saberMas:hover{
     background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
     background: #08E4D6;
     color: #4658F8;
@@ -76,13 +89,15 @@ span.uno:before{
         height: 70vh;
         display: flex;
         align-content: center;
+        background-size: 50%;
+        background-position: right bottom;
     }
 
     .Titulo{
         text-align: start;
         margin-top: 0px;
-        font-size: 60px;
-        font-weight: 400;
+        font-size: 65px;
+        font-weight: 100;
     }
 
     .subTitulo{
@@ -90,8 +105,10 @@ span.uno:before{
     }
 
     .foto{
-        width: 30% !important;
+        width: 30% !important;  
         padding-left: 0px;
+        /*position: absolute;
+        z-index: -1;*/
     }
 
     .subTitulo2{
@@ -99,6 +116,7 @@ span.uno:before{
         font-weight: 400;
         margin-bottom: 0px;
         font-size: 30px;
+        color: #fff;
     }
     
     span.dos:before{
@@ -106,15 +124,16 @@ span.uno:before{
         font-weight: 600;
         margin-bottom: 0px;
         content: '';
+        color: #08E4D6;
         animation-name: head;
         animation-duration: 10s;
         animation-iteration-count: infinite;
     }
     @keyframes head {
-        0% {opacity:'1';content: " Profesionales de la salud";color: #8980F5;}
+        0% {opacity:'1';content: " Profesionales de la salud";}
         20% {opacity:'1';content: " Profesionales de la salud";}
-        30% {opacity:'1';content: " Psicologos";color: #08E4D6;}
+        30% {opacity:'1';content: " Psicologos";}
         60% {opacity:'1';content: " Estudiantes";}
-        100% {opacity:'1';content: " Docentes";color: #4658F8;}
+        100% {opacity:'1';content: " Docentes";}
     }
 }
