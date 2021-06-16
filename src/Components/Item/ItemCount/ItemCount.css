@@ -7,6 +7,12 @@
     font-weight: 600;
 }
 
+.valor{
+    border: none;
+    font-weight: 600;
+    text-align: center;
+}
+
 .masMenos{
     border: none;
     font-size: 25px;
