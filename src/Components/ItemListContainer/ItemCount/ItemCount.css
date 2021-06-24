@@ -44,7 +44,6 @@
     background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
     background: #4658F8;
     color: #fff;
-    z-index: 10000;
     transform: scale(1.0);
     transition: .4s;
     padding: 10px 0px;
@@ -57,4 +56,19 @@
     color: #4658F8;
     transform: scale(1.01);
     transition: .4s;
+}
+
+.disabled{
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none !important;
+    background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
+    background: #5a5a5a;
+    color: #fff;
+    transform: scale(1.0);
+    transition: .4s;
+    padding: 10px 0px;
+    margin-top: 10px;
 }

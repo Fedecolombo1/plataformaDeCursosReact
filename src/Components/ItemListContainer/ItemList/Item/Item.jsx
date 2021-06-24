@@ -6,6 +6,8 @@ const Item = () => {
 
     const [Item, setItem] = useState({id:1,price:'Cargando curso..'})
 
+    
+
     useEffect(() => {
         const itemsDelay = new Promise((resolve, reject) => {
             resolve({id:1,title:'Disenio Ux/Ui',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,pictureUrl:'https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png'})
@@ -14,7 +16,10 @@ const Item = () => {
                 setItem(result)
             }, 2000)
         })
+        itemsDelay.then()
     }, [])
+
+    
 
     return(
         <>

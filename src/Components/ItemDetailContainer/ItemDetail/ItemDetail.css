@@ -1,0 +1,71 @@
+.detailDiv{
+    padding: 0px;
+    align-content: center;
+    margin-top: 68px;
+}
+
+.bannerP{
+    height: 40vh;
+    display: flex;
+    align-content: center;
+    background-image: url('https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png');
+    background-position: center;
+    background-size: 145%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    margin-bottom: 30px;
+    background-color: #123C5E;
+    background-attachment: scroll;
+}
+
+.tituloP{
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.descripcion{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.duracion{
+    font-size: 19px;
+}
+
+.precioYbtn{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.precio{
+    margin: 0px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.inscribirse{
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none !important;
+    background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
+    background: #4658F8;
+    color: #fff;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 12px;
+    padding-left: 12px;
+    transform: scale(1.0);
+    transition: .7s;
+}
+  
+.inscribirse:hover{
+    background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    background: #08E4D6;
+    color: #4658F8;
+    transform: scale(1.1);
+    transition: .7s;
+}
