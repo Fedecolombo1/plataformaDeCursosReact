@@ -4,7 +4,19 @@
     margin-top: 68px;
 }
 
-.bannerP{
+.descProd{
+    background: #4658F8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+iframe{
+    padding: 0px !important;
+}
+
+.bannerProd{
     height: 40vh;
     display: flex;
     align-content: center;
@@ -18,31 +30,59 @@
     background-attachment: scroll;
 }
 
-.tituloP{
+.cursoDe{
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+    color: #2a2a2a;
+}
+
+.tituloProd{
     text-align: center;
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 30px;
+    color: #123C5E;
 }
 
 .descripcion{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 0px;
     font-size: 16px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.subtitleProd{
+    font-size: 28px;
+    margin: 0;
+    color: #fff;
 }
 
 .duracion{
-    font-size: 19px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+    margin-top: 50px;
+    color: #fff;
 }
 
 .precioYbtn{
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
+    padding: 0px;
 }
 
-.precio{
+.iconoDesc{
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.precioProd{
     margin: 0px;
-    font-size: 19px;
-    font-weight: 400;
+    margin-bottom: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
 }
 
 .inscribirse{
@@ -52,20 +92,51 @@
     border-radius: 30px;
     text-decoration: none !important;
     background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
-    background: #4658F8;
-    color: #fff;
+    background: #fff;
+    color: #4658F8;
     padding-top: 12px;
     padding-bottom: 12px;
     padding-right: 12px;
     padding-left: 12px;
     transform: scale(1.0);
     transition: .7s;
+    margin-top: 40px;
 }
   
 .inscribirse:hover{
     background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
-    background: #08E4D6;
-    color: #4658F8;
+    background: #2a2a2a;
+    color: #fff;
     transform: scale(1.1);
     transition: .7s;
+}
+
+@media (min-width: 768px) {
+    .detailDiv{
+        justify-content: space-between;
+    }
+    .bannerProd{
+        border-radius: 15px;
+        background-size: 50%;
+    }
+    .descProd{
+        border-radius: 15px;
+    }
+
+    .cursoDe{
+        font-size: 28px;
+        font-weight: bold;
+        display: block;
+        color: #2a2a2a;
+    }
+    
+    .tituloProd{
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 30px;
+        color: #123C5E;
+    }
+    iframe{
+        border-radius: 25px;
+    }
 }

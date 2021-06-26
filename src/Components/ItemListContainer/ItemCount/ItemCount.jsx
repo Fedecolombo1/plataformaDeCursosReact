@@ -9,7 +9,7 @@ const ItemCount = ({stock, initial}) => {
     const operar = (operador) => {
         if(operador === '+' && Contador < stock){
             setContador(Contador + 1)
-        } else if(operador === '-' && Contador < stock){
+        } else if(operador === '-' && Contador <= stock && Contador !== 1){
             setContador(Contador - 1)
         }
     }

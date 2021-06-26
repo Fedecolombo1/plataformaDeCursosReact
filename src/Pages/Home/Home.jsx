@@ -7,7 +7,6 @@ import NavBar from '../../Components/NavBar/NavBar'
 import Banner from '../../Components/Banner/Banner'
 import ItemListContainer from '../../Components/ItemListContainer/ItemListContainer'
 import BtnFixed from '../../Components/BtnFixed/BtnFixed'
-import ItemDetailContainer from '../../Components/ItemDetailContainer/ItemDetailContainer'
 
 
 
@@ -20,7 +19,6 @@ function Home() {
         <NavBar />
         <Banner />
         <ItemListContainer greeting='Nuestros Ultimos Cursos' />
-        <ItemDetailContainer />
       </div>
     </div>
   );
