@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
 
 
+header{
+  margin: 0;
+}
+
+.activeNav{
+  color: #4658F8;
+}
 
 header.mobile{
     justify-content: space-between;

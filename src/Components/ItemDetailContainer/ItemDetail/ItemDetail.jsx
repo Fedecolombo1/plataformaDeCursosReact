@@ -12,8 +12,8 @@ const ItemDetail = () => {
   const [Item, setItem] = useState({ id: 1, price: "Cargando curso.." });
 
   useEffect(() => {
-   // const getItems = new Promise((resolve, reject) => {
-   //   resolve({
+    // const getItems = new Promise((resolve, reject) => {
+    //   resolve({
     //    id: 1,
     //    title: "Psicoanalisis Temprano",
     //    description:
@@ -28,7 +28,7 @@ const ItemDetail = () => {
     //    setItem(result);
     //  }, 2000);
     //});
-    //getItems.then(); 
+    //getItems.then();
 
     const getItem = async () => {
       const result = {
@@ -40,22 +40,31 @@ const ItemDetail = () => {
         duration: "2 Semanas",
         pictureUrl: "",
         videoUrl: videoUrl,
-      }
+      };
 
       await setItem(result);
-    }
+    };
     setTimeout(() => {
-      getItem()
+      getItem();
     }, 2000);
   }, []);
-
 
   return (
     <>
       <div className="detailDiv col-12 col-lg-10 row align">
         <div className="bannerProd col-12 col-lg-12"></div>
-        <h1 className="tituloProd col-11"><span className="cursoDe"> Curso online de </span> {Item.title}</h1>
-        <iframe className="col-12 col-lg-4" height="345" src="https://www.youtube.com/embed/ThiCMd5kGbE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullscreen></iframe>
+        <h1 className="tituloProd col-11">
+          <span className="cursoDe"> Curso online de </span> {Item.title}
+        </h1>
+        <iframe
+          className="col-12 col-lg-4"
+          height="345"
+          src="https://www.youtube.com/embed/ThiCMd5kGbE"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullscreen
+        ></iframe>
         <div className="col-12 col-lg-8 row align descProd">
           <h3 className="subtitleProd">Acerca del curso</h3>
           <p className="descripcion col-12">{Item.description}</p>

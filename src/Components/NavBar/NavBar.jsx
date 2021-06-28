@@ -5,6 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CardWidget from './CartWidget/CardWidget'
 import { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 const NavBar = () => {
 	/* Burger menu
@@ -37,19 +38,22 @@ const NavBar = () => {
 
 	return (
 		<>
-			<header className='navbar col-12 desk'>
-				<a className='col-2' href='https://fedecolombo1.github.io/Home/'>
+			<header className='navbar row col-12 desk'>
+				<NavLink activeClassName='activeNav' className='col-2' to='/'>
 					<h1 className='col-12 nombre'>Escala</h1>
-				</a>
+				</NavLink>
 				<div className='col-6 row align'>
 					<Dropdown menualign='center' className='col-2 align links'>
-						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-							Cursos{' '}
-							<FontAwesomeIcon
-								style={{ marginLeft: '5px', fontSize: '15px' }}
-								icon={faChevronDown}
-							/>
-						</Dropdown.Toggle>
+
+						<NavLink activeClassName='activeNav' to='/cursos'>
+							<Dropdown.Toggle variant='success' id='dropdown-basic'>
+								Cursos{' '}
+								<FontAwesomeIcon
+									style={{ marginLeft: '5px', fontSize: '15px' }}
+									icon={faChevronDown}
+								/>
+							</Dropdown.Toggle>
+						</NavLink>
 
 						<Dropdown.Menu id='dropdown-menu'>
 							<Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
@@ -108,7 +112,7 @@ const NavBar = () => {
 				<div id='progressbar2'></div>
 			</header>
 
-			<header className='row col-12 align mobile'>
+			<header className='col-12 align mobile'>
 				<nav className='col-4 align navbar'>
 					<div className='menu-mobile'>
 						<button id='bt-menu-mobile'>

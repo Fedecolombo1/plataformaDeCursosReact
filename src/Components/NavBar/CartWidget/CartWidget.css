@@ -1,5 +1,6 @@
 .cartDiv{
     justify-content: flex-end;
+    padding: 6px;
 }
 
 svg.cartIcon{
