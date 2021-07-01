@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CardWidget from './CartWidget/CardWidget'
 import { useEffect } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const NavBar = () => {
 	/* Burger menu
@@ -39,13 +39,13 @@ const NavBar = () => {
 	return (
 		<>
 			<header className='navbar row col-12 desk'>
-				<NavLink activeClassName='activeNav' className='col-2' to='/'>
+				<Link  className='col-2' to='/'>
 					<h1 className='col-12 nombre'>Escala</h1>
-				</NavLink>
+				</Link>
 				<div className='col-6 row align'>
 					<Dropdown menualign='center' className='col-2 align links'>
 
-						<NavLink activeClassName='activeNav' to='/cursos'>
+						<NavLink activeClassName='activeNav' to='/category/cursos'>
 							<Dropdown.Toggle variant='success' id='dropdown-basic'>
 								Cursos{' '}
 								<FontAwesomeIcon
@@ -62,19 +62,21 @@ const NavBar = () => {
 						</Dropdown.Menu>
 					</Dropdown>
 					<Dropdown menualign='center' className='col-2 align links'>
-						<Dropdown.Toggle variant='success' id='dropdown-basic'>
-							Recursos{' '}
-							<FontAwesomeIcon
-								style={{ marginLeft: '5px', fontSize: '15px' }}
-								icon={faChevronDown}
-							/>
-						</Dropdown.Toggle>
+						<Link to='/category/recursos'>
+							<Dropdown.Toggle variant='success' id='dropdown-basic'>
+								Recursos{' '}
+								<FontAwesomeIcon
+									style={{ marginLeft: '5px', fontSize: '15px' }}
+									icon={faChevronDown}
+								/>
+							</Dropdown.Toggle>
 
-						<Dropdown.Menu>
-							<Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
-							<Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
-							<Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
-						</Dropdown.Menu>
+							<Dropdown.Menu>
+								<Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
+								<Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
+								<Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
+							</Dropdown.Menu>
+						</Link>
 					</Dropdown>
 					<h2 className='col-2 align links'>
 						<a className='navLinks' href='#contacto'>
@@ -124,17 +126,16 @@ const NavBar = () => {
 					</div>
 					<div id='links'>
 						<a href='/null'>Home</a>
-						<a href='/null'>About</a>
+						<NavLink activeClassName='activeNav' to='/category/cursos'>
+							Cursos
+						</NavLink>
 						<a href='/null'>Contact</a>
 					</div>
 				</nav>
 
-				<a
-					className='col-4 row align nombre'
-					href='https://fedecolombo1.github.io/Home/'
-				>
+				<NavLink activeClassName='activeNav' className='col-4 row align nombre' to='/'>
 					Escala
-				</a>
+				</NavLink>
 
 				<CardWidget />
 			</header>

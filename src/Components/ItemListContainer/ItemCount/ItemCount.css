@@ -72,3 +72,12 @@
     padding: 10px 0px;
     margin-top: 10px;
 }
+
+.none{
+    display: none;
+}
+
+.mostrar{
+    display: block;
+    text-align: center;
+}

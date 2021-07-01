@@ -15,14 +15,14 @@ export default function Routes() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/detalle">
-            <Detail />
-          </Route>
-          <Route path="/cursos">
+          <Route exact path="/category/:categoryId">
             <Cursos />
           </Route>
           <Route path="/cursos/:id">
             <Detail />
+          </Route>
+          <Route path="/cart">
+            <p>Carrito</p>
           </Route>
         </Switch>
     </Router>

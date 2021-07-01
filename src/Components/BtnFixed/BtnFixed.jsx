@@ -1,12 +1,13 @@
 import "./BtnFixed.css";
+import { NavLink } from "react-router-dom";
 
 
 const BtnFixed = () => {
     return(
         <>
-            <a href='none' className="btnFixed align col-12 mobile">
+            <NavLink to='/category/cursos' className="btnFixed align col-12 mobile">
                 Ver Cursos
-            </a>
+            </NavLink>
         </>
     )
 }

@@ -18,7 +18,7 @@ function Home() {
         <div className="row align" style={{width:'100%', margin:'0', marginBottom:'68px'}}>
           <BtnFixed />
           <Banner />
-          <ItemListContainer greeting='Nuestros Ultimos Cursos' />
+          <ItemListContainer greeting='Nuestros Ultimos Cursos y recursos' />
         </div>
       </div>
     </Page>
