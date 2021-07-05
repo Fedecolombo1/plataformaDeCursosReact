@@ -1,5 +1,6 @@
 import "./ItemDetail.css";
-import { React, useEffect, useState } from "react";
+import { React, useEffect, useState, useContext } from "react";
+import { CartContext } from "../../../Context/cartContext"
 import { useParams } from "react-router-dom";
 
 import ItemCount from '../../ItemListContainer/ItemCount/ItemCount'
@@ -15,43 +16,35 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const ItemDetail = () => {
   const [Item, setItem] = useState(undefined);
 
-  let {id} = useParams()
+  const {id} = useParams()
+
+  const addItem = useContext(CartContext)
+  const saludo = useContext(CartContext)
 
   useEffect(() => {
-    // const getItems = new Promise((resolve, reject) => {
-    //   resolve({
-    //    id: 1,
-    //    title: "Psicoanalisis Temprano",
-    //    description:
-    //      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque voluptate consequatur laboriosam, officia exercitationem quod, nulla earum molestias laborum //nesciunt porro. Unde fugit sapiente eos vero. Quos vitae similique hic?",
-    //    price: 2500,
-    //    duration: "2 Semanas",
-    //    pictureUrl: "",
-    //    videoUrl: videoUrl,
-    //  });
-    //}).then((result) => {
-    //  setTimeout(() => {
-    //    setItem(result);
-    //  }, 2000);
-    //});
-    //getItems.then();
 
     const productos = [
-      {id:1,title:'Disenio Ux/Ui',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,pictureUrl:'https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png',categoryId:'cursos'},
-      {id:2,title:'Psicologia',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,pictureUrl:'https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png',categoryId:'cursos'},
-      {id:3,title:'Material x',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,pictureUrl:'https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png',categoryId:'recursos'},
-      {id:4,title:'Recurso Esi',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,pictureUrl:'https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png',categoryId:'recursos'},
+      {id:1,title:'Disenio Ux/Ui',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'cursos'},
+      {id:2,title:'Psicologia',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'cursos'},
+      {id:3,title:'Material x',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'recursos'},
+      {id:4,title:'Recurso Esi',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'recursos'},
     ]
 
     const getItem = async () => {
       const result = productos.filter(producto => producto.id == id);
-      await setItem(result);
+      await setItem(result[0]);
       // console.log(Item);
     };
     setTimeout(() => {
       getItem();
     }, 2000);
     }, [id, Item]);
+
+    const onAdd = (quantity) => {
+      alert(`Agregaste ${quantity} ${Item.title} al carrito`)
+      addItem(Item, quantity)
+    }
+
 
   return (
     <>
@@ -108,7 +101,7 @@ const ItemDetail = () => {
             </div>
           </div>
           <div className="col-12 align">
-              <ItemCount initial={1} stock={5} />
+              <ItemCount initial={1} stock={5} onAdd={onAdd}/>
           </div>
         </div>
         )

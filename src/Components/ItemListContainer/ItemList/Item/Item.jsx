@@ -24,6 +24,7 @@ const Item = () => {
         }).then((result) => {
             if(categoryId){
                 result = result.filter(producto => producto.categoryId === categoryId);
+                console.log(result);
             } else {
                 result = result
             }
@@ -48,7 +49,7 @@ const Item = () => {
                         <p className="col-12 subtitleP">{item.description}</p>
                         <p className="col-12 priceP">${item.price}</p>
                     </div>
-                    <NavLink activeClassName='activeNav' className='col-12 align' style={{textDecoration:'none'}}  to={'/cursos/' + item.id}>
+                    <NavLink activeClassName='activeNav' className='col-12 align' style={{textDecoration:'none'}}  to={`/${item.categoryId}/${item.id}`}>
                         <button className="col-6 botonS">Ver Curso</button>
                     </NavLink>
                 </div>

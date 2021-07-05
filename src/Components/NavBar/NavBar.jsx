@@ -62,7 +62,7 @@ const NavBar = () => {
 						</Dropdown.Menu>
 					</Dropdown>
 					<Dropdown menualign='center' className='col-2 align links'>
-						<Link to='/category/recursos'>
+						<NavLink to='/category/recursos'>
 							<Dropdown.Toggle variant='success' id='dropdown-basic'>
 								Recursos{' '}
 								<FontAwesomeIcon
@@ -76,7 +76,7 @@ const NavBar = () => {
 								<Dropdown.Item href='#/action-2'>Another action</Dropdown.Item>
 								<Dropdown.Item href='#/action-3'>Something else</Dropdown.Item>
 							</Dropdown.Menu>
-						</Link>
+						</NavLink>
 					</Dropdown>
 					<h2 className='col-2 align links'>
 						<a className='navLinks' href='#contacto'>

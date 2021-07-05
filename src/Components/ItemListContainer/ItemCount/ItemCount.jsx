@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial, onAdd }) => {
   const [Contador, setContador] = useState(initial);
   const [estado, setEstado] = useState('');
   const [mostrar, setMostrar] = useState('');
@@ -16,11 +16,12 @@ const ItemCount = ({ stock, initial }) => {
     }
   };
 
-  const onAdd = async (event) => {
-    if (stock > 1) {
+  const handleAdd = async (event) => {
+    if (stock > 0) {
       setEstado('none')
       setMostrar('mostrar')
       setContadorFinal(Contador)
+      onAdd(Contador)
     } else {
       setContador("No hay stock :(");
     }
@@ -45,10 +46,10 @@ const ItemCount = ({ stock, initial }) => {
       </div>
       {stock >= 1 ? (
         <>
-          <button className={estado + " agregar col-10 col-lg-12"} onClick={(e) => onAdd(e)}>
+          <button className={estado + " agregar col-10 col-lg-12"} onClick={(e) => handleAdd(e)}>
             Agregar al carrito
           </button>
-          <NavLink to='/cart' className={mostrar + " none agregar col-10 col-lg-12"} onClick={(e) => onAdd(e)}>
+          <NavLink to='/cart' className={mostrar + " none agregar col-10 col-lg-12"} >
             Terminar compra
           </NavLink>
         </>
