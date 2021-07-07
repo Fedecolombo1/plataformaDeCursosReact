@@ -42,7 +42,10 @@ const ItemDetail = () => {
 
     const onAdd = (quantity) => {
       alert(`Agregaste ${quantity} ${Item.title} al carrito`)
+      console.log(quantity);
+      console.log(Item);
       addItem(Item, quantity)
+      console.log(saludo);
     }
 
 

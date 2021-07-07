@@ -1,0 +1,18 @@
+.itemContainer{
+    margin-top: 40px;
+}
+
+.nombreProducto{
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.precioProducto{
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 18px;
+}
+
+.cantidad{
+    padding: 0px;
+}

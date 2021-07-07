@@ -6,7 +6,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   const [Contador, setContador] = useState(initial);
   const [estado, setEstado] = useState('');
   const [mostrar, setMostrar] = useState('');
-  const [contadorFinal, setContadorFinal] = useState();
 
   const operar = (operador) => {
     if (operador === "+" && Contador < stock) {
@@ -20,7 +19,6 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     if (stock > 0) {
       setEstado('none')
       setMostrar('mostrar')
-      setContadorFinal(Contador)
       onAdd(Contador)
     } else {
       setContador("No hay stock :(");
