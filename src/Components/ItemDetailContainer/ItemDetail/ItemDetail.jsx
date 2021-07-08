@@ -18,8 +18,7 @@ const ItemDetail = () => {
 
   const {id} = useParams()
 
-  const addItem = useContext(CartContext)
-  const saludo = useContext(CartContext)
+  const {addItem, saludo} = useContext(CartContext)
 
   useEffect(() => {
 

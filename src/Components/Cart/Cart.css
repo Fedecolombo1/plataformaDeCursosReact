@@ -1,5 +1,17 @@
+.itemCartContainer{
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 95%;
+    padding: 20px 3px;
+    min-height: 80vh;
+    align-content: space-between;
+}
+
 .itemContainer{
-    margin-top: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
 }
 
 .nombreProducto{
@@ -15,4 +27,72 @@
 
 .cantidad{
     padding: 0px;
+}
+
+.subTotal{
+    padding: 10px 0px;
+    border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+.Total{
+    padding: 10px 0px;
+}
+
+.total{
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.precio{
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0;
+    text-align: end;
+}
+
+.subtotal{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.precioSub{
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    text-align: end;
+}
+
+.btnPagar{
+    margin-top: 20px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none !important;
+    background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
+    background: #4658F8;
+    color: #fff;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    transform: scale(1.0);
+    transition: .7s;
+    border: 2px solid #4658F8;
+}
+
+.btnBorrarItems{
+    margin-top: 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none !important;
+    background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
+    background: transparent;
+    color: #D4D2D8;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    transform: scale(1.0);
+    transition: .7s;
 }

@@ -8,6 +8,19 @@ svg.cartIcon{
     color: #123C5E;
 }
 
+.itemsCount{
+    position: absolute;
+    background: #4658F8;
+    text-align: center;
+    color: #fff;
+    border-radius: 30px;
+    width: 20px;
+    height: 20px;
+    bottom: 9px;
+    right: 2px;
+    margin: 0;
+}
+
 @media (min-width: 768px) {
     .cartDiv{
         justify-content: center;
