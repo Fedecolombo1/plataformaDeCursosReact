@@ -15,3 +15,4 @@ ReactDOM.render(
 );
 
 
+export default ReactDOM

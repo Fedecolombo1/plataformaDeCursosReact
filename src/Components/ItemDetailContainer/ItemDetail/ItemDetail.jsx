@@ -1,9 +1,10 @@
 import "./ItemDetail.css";
 import { React, useEffect, useState, useContext } from "react";
-import { CartContext } from "../../../Context/cartContext"
+import { CartContext } from "../../../Context/cartContext";
 import { useParams } from "react-router-dom";
+import { dataBase } from "../../../Firebase/firebase";
 
-import ItemCount from '../../ItemListContainer/ItemCount/ItemCount'
+import ItemCount from "../../ItemListContainer/ItemCount/ItemCount";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
@@ -11,47 +12,89 @@ import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-
-
 const ItemDetail = () => {
   const [Item, setItem] = useState(undefined);
 
-  const {id} = useParams()
+  const { id } = useParams();
 
-  const {addItem, saludo} = useContext(CartContext)
+  const { addItem, saludo } = useContext(CartContext);
 
   useEffect(() => {
-
     const productos = [
-      {id:1,title:'Disenio Ux/Ui',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'cursos'},
-      {id:2,title:'Psicologia',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'cursos'},
-      {id:3,title:'Material x',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'recursos'},
-      {id:4,title:'Recurso Esi',description:'Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?',price:2000,duration:'2 Semanas',categoryId:'recursos'},
-    ]
+      {
+        id: 1,
+        title: "Disenio Ux/Ui",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
+        price: 2000,
+        duration: "2 Semanas",
+        categoryId: "cursos",
+      },
+      {
+        id: 2,
+        title: "Psicologia",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
+        price: 2000,
+        duration: "2 Semanas",
+        categoryId: "cursos",
+      },
+      {
+        id: 3,
+        title: "Material x",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
+        price: 2000,
+        duration: "2 Semanas",
+        categoryId: "recursos",
+      },
+      {
+        id: 4,
+        title: "Recurso Esi",
+        description:
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
+        price: 2000,
+        duration: "2 Semanas",
+        categoryId: "recursos",
+      },
+    ];
 
     const getItem = async () => {
-      const result = productos.filter(producto => producto.id == id);
+      const result = productos.filter((producto) => producto.id == id);
       await setItem(result[0]);
       // console.log(Item);
     };
     setTimeout(() => {
       getItem();
-    }, 2000);
-    }, [id, Item]);
+    }, 2000); 
 
-    const onAdd = (quantity) => {
-      alert(`Agregaste ${quantity} ${Item.title} al carrito`)
-      console.log(quantity);
-      console.log(Item);
-      addItem(Item, quantity)
-      console.log(saludo);
-    }
+    /*const db = dataBase;
+    const itemCollection = db.collection("products");
+    itemCollection.get().then((querySnapshot) => {
+        if(querySnapshot.size === 0){
+            console.log('no results!');
+        }else{
+            querySnapshot.docs.map(doc => [doc.data(), doc.id]);
+        }
+    }).catch((error) => {
+        console.log('Error searching items', error);
+    }).finally(() => {
 
+    })*/
+    
+  }, [id, Item]);
+  const onAdd = (quantity) => {
+    alert(`Agregaste ${quantity} ${Item.title} al carrito`);
+    console.log(quantity);
+    console.log(Item);
+    addItem(Item, quantity);
+    console.log(saludo);
+  };
 
   return (
     <>
-      { Item ? (
-          <div className="detailDiv col-12 col-lg-10 row align">
+      {Item ? (
+        <div className="detailDiv col-12 col-lg-10 row align">
           <div className="bannerProd col-12 col-lg-12"></div>
           <h1 className="tituloProd col-11">
             <span className="cursoDe"> Curso online de </span> {Item.title}
@@ -103,18 +146,12 @@ const ItemDetail = () => {
             </div>
           </div>
           <div className="col-12 align">
-              <ItemCount initial={1} stock={5} onAdd={onAdd}/>
+            <ItemCount initial={1} stock={5} onAdd={onAdd} />
           </div>
         </div>
-        )
-        :
-        (
-        <div className="detailDiv col-12 col-lg-10 row align">
-          CARGANDO
-        </div>
-        )
-      }
-      
+      ) : (
+        <div className="detailDiv col-12 col-lg-10 row align">CARGANDO</div>
+      )}
     </>
   );
 };
