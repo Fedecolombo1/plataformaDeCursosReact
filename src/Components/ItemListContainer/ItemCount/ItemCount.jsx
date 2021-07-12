@@ -37,7 +37,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         >
           -
         </button>
-        <input type="text" className="valor" value={Contador} />
+        <input type="text" className="valor" value={Contador}/>
         <button id="mas" className="masMenos align" onClick={() => operar("+")}>
           +
         </button>

@@ -44,7 +44,7 @@ const Item = () => {
                 if(querySnapshot.size === 0){
                     console.log('no results!');
                 }else{
-                    setItems(querySnapshot.docs.map(doc => [doc.data(), doc.id]));
+                    setItems(querySnapshot.docs.map(doc => [{id: doc.id, ...doc.data()}]));
                 }
             }).catch((error) => {
                 console.log('Error searching items', error);
@@ -56,7 +56,7 @@ const Item = () => {
                 if(querySnapshot.size === 0){
                     console.log('no results!');
                 }else{
-                    setItems(querySnapshot.docs.map(doc => [doc.data(), doc.id]));
+                    setItems(querySnapshot.docs.map(doc => [{id: doc.id, ...doc.data()}]));
                 }
             }).catch((error) => {
                 console.log('Error searching items', error);
@@ -82,7 +82,7 @@ const Item = () => {
                         <p className="col-12 subtitleP">{item[0].description}</p>
                         <p className="col-12 priceP">${item[0].price}</p>
                     </div>
-                    <NavLink activeClassName='activeNav' className='col-12 align' style={{textDecoration:'none'}}  to={`/${item[0].categoryId}/${item[1]}`}>
+                    <NavLink activeClassName='activeNav' className='col-12 align' style={{textDecoration:'none'}}  to={`/${item[0].categoryId}/${item[0].id}`}>
                         <button className="col-6 botonS">Ver Curso</button>
                     </NavLink>
                 </div>

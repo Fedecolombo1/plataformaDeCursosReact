@@ -1,8 +1,10 @@
 import { CartContext } from "../../Context/cartContext";
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import img from "../../images/img-top-why.png";
 import "./Cart.css";
+import { useEffect } from "react";
+import { useParams } from "react-router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -12,12 +14,16 @@ const Cart = () => {
   const { Carrito, removeItem, total, clear} = useContext(CartContext);
   console.log(Carrito);
 
+  const [linkMp, setLinkMp] = useState()
+
   const restar = (param) => {
     if(param > 1 ){return param - 1;}
   }
   const sumar = (param) => {
     if(param < 1){return param + 1;}
   }
+
+ 
 
   return (
     <>
@@ -75,7 +81,7 @@ const Cart = () => {
             <h1 className="col-6 total">Total:</h1>
             <h1 className="col-6 precio">${total}</h1>
           </div>
-          <NavLink className="col-12 align btnPagar" to={"/"}>
+          <NavLink className="col-12 align btnPagar" to={'/pagar'}>
             Pagar
           </NavLink>
           <button className="col-12 btnBorrarItems" onClick={() => clear()}>Borrar items</button>

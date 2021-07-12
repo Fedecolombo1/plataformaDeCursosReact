@@ -58,12 +58,19 @@ export const CartProvider = ({children}) => {
 
     const removeItem = (itemId, precio, quantity) => {
         const result = Carrito.filter(producto => producto.newItem.id !== itemId);
-        setCarrito(result)
-        /*setTotal(total - (precio*quantity))*/
+        if(result == (0)){
+            setCarrito(undefined)
+        } else {
+            setCarrito(result)
+        }
+        setTotal(total - (precio*quantity))
+        setTotalItems(totalItems - quantity)
     }
 
     const clear = () => {
-        setCarrito([])
+        setCarrito(undefined)
+        setTotal(0)
+        setTotalItems()
     }
     
     return(

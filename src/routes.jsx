@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home'
 import Detail from "./Pages/Detail/Detail";
 import Cursos from './Pages/Cursos/Cursos'
 import Carrito from './Pages/Carrito/Carrito'
+import Pagar from './Components/Pagar/Pagar'
 
 export default function Routes() {
   return (
@@ -24,6 +25,9 @@ export default function Routes() {
           </Route>
           <Route path="/cart">
             <Carrito />
+          </Route>
+          <Route path="/pagar">
+            <Pagar />
           </Route>
         </Switch>
     </Router>

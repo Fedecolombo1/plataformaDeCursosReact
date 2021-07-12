@@ -4,7 +4,6 @@ import './index.css';
 import Routes from './routes';
 import { CartProvider } from './Context/cartContext'
 
-
 ReactDOM.render(
   <React.StrictMode>
     <CartProvider>

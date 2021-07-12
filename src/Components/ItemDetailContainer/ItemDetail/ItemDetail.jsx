@@ -11,6 +11,7 @@ import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { data } from "flickity";
 
 const ItemDetail = () => {
   const [Item, setItem] = useState(undefined);
@@ -20,7 +21,7 @@ const ItemDetail = () => {
   const { addItem, saludo } = useContext(CartContext);
 
   useEffect(() => {
-    const productos = [
+    /*const productos = [
       {
         id: 1,
         title: "Disenio Ux/Ui",
@@ -66,23 +67,26 @@ const ItemDetail = () => {
     };
     setTimeout(() => {
       getItem();
-    }, 2000); 
+    }, 2000); */
 
-    /*const db = dataBase;
+    const db = dataBase;
     const itemCollection = db.collection("products");
-    itemCollection.get().then((querySnapshot) => {
-        if(querySnapshot.size === 0){
+    const itemDetail = itemCollection.doc(id)
+
+    itemDetail.get().then((doc) => {
+        if(doc.size === 0){
             console.log('no results!');
         }else{
-            querySnapshot.docs.map(doc => [doc.data(), doc.id]);
+          setItem({id: doc.id, ...doc.data()});
         }
     }).catch((error) => {
         console.log('Error searching items', error);
     }).finally(() => {
 
-    })*/
+    })
     
   }, [id, Item]);
+
   const onAdd = (quantity) => {
     alert(`Agregaste ${quantity} ${Item.title} al carrito`);
     console.log(quantity);
