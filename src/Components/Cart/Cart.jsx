@@ -11,7 +11,7 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const Cart = () => {
-  const { Carrito, removeItem, total, clear} = useContext(CartContext);
+  const { Carrito, removeItem, total, clear, createOrder} = useContext(CartContext);
   console.log(Carrito);
 
   const [linkMp, setLinkMp] = useState()
@@ -22,8 +22,6 @@ const Cart = () => {
   const sumar = (param) => {
     if(param < 1){return param + 1;}
   }
-
- 
 
   return (
     <>
@@ -43,11 +41,11 @@ const Cart = () => {
                   <h3 className="col-12 nombreProducto">{carrito.newItem.title}</h3>
                   <h3 className="col-12 precioProducto">${carrito.newItem.price}</h3>
                   <div className="cantidad col-10 align">
-                    <button id="menos" className="masMenos align" onClick={() => {restar(carrito.quantity)}}>
+                    <button id="menos" className="masMenos align" onClick={(carrito) => {restar(carrito.quantity)}}>
                       -
                     </button>
                     <input type="text" value={carrito.quantity} className="valor col-3" />
-                    <button id="mas" className="masMenos align" onClick={() => {sumar(carrito.quantity)}}>
+                    <button id="mas" className="masMenos align" onClick={(carrito) => {sumar(carrito.quantity)}}>
                       +
                     </button>
                   </div>
@@ -81,7 +79,7 @@ const Cart = () => {
             <h1 className="col-6 total">Total:</h1>
             <h1 className="col-6 precio">${total}</h1>
           </div>
-          <NavLink className="col-12 align btnPagar" to={'/pagar'}>
+          <NavLink className="col-12 align btnPagar" to={`/pagar?title=DisenioUx&price=2500`} onClick={() => {createOrder()}}>
             Pagar
           </NavLink>
           <button className="col-12 btnBorrarItems" onClick={() => clear()}>Borrar items</button>

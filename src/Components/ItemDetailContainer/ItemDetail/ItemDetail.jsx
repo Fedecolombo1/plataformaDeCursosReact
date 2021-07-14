@@ -21,53 +21,6 @@ const ItemDetail = () => {
   const { addItem, saludo } = useContext(CartContext);
 
   useEffect(() => {
-    /*const productos = [
-      {
-        id: 1,
-        title: "Disenio Ux/Ui",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
-        price: 2000,
-        duration: "2 Semanas",
-        categoryId: "cursos",
-      },
-      {
-        id: 2,
-        title: "Psicologia",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
-        price: 2000,
-        duration: "2 Semanas",
-        categoryId: "cursos",
-      },
-      {
-        id: 3,
-        title: "Material x",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
-        price: 2000,
-        duration: "2 Semanas",
-        categoryId: "recursos",
-      },
-      {
-        id: 4,
-        title: "Recurso Esi",
-        description:
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. A, odio?",
-        price: 2000,
-        duration: "2 Semanas",
-        categoryId: "recursos",
-      },
-    ];
-
-    const getItem = async () => {
-      const result = productos.filter((producto) => producto.id == id);
-      await setItem(result[0]);
-      // console.log(Item);
-    };
-    setTimeout(() => {
-      getItem();
-    }, 2000); */
 
     const db = dataBase;
     const itemCollection = db.collection("products");
