@@ -183,7 +183,7 @@ a.logo{
         margin-bottom: 0px;
     }
 
-    .links a.navLinks{
+    .navLinks{
         color: #123C5E;
         font-size: 17px;
         font-weight: 500;
@@ -196,7 +196,7 @@ a.logo{
         text-decoration: none;
     }
 
-    .links a.navLinks:hover{
+    .navLinks:hover{
         color: #4658F8;
     }
 

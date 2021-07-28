@@ -2,7 +2,10 @@ import { React, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./ItemCount.css";
 
-const ItemCount = ({ stock, initial, onAdd }) => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
+const ItemCount = ({ stock, initial, onAdd, btnColor }) => {
   const [Contador, setContador] = useState(initial);
   const [estado, setEstado] = useState('');
   const [mostrar, setMostrar] = useState('');
@@ -26,10 +29,11 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
 
+  
 
   return (
-    <div className="col-12 col-lg-3 align row">
-      <div className={estado + " cantidad col-10 col-lg-12 align"}>
+    <div className="col-12 col-lg-7 align row">
+      <div className={estado + " cantidad col-12 col-lg-12 align"}>
         <button
           id="menos"
           className="masMenos align"
@@ -44,11 +48,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
       </div>
       {stock >= 1 ? (
         <>
-          <button className={estado + " agregar col-10 col-lg-12"} onClick={(e) => handleAdd(e)}>
+          <button className={estado + " agregar col-12 col-lg-12"}  onClick={(e) => handleAdd(e)}>
             Agregar al carrito
           </button>
-          <NavLink to='/cart' className={mostrar + " none agregar col-10 col-lg-12"} >
+          <NavLink to='/cart' className={mostrar + " none agregar col-12 col-lg-12"}  >
             Terminar compra
+            <FontAwesomeIcon
+                  style={{ fontWeight: "400", marginLeft: "5px" }}
+                  icon={faArrowRight}
+                />
           </NavLink>
         </>
       ) : (

@@ -2,14 +2,16 @@
     padding: 0px;
     align-content: center;
     margin-top: 68px;
+    background-color: #123C5E;
 }
 
 .descProd{
     background: #4658F8;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    border-radius: 30px 30px 0px 0px;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 60px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 iframe{
@@ -17,15 +19,13 @@ iframe{
 }
 
 .bannerProd{
-    height: 40vh;
+    height: 45vh;
     display: flex;
-    align-content: center;
+    align-items: flex-start;
     background-image: url('https://aspectgroup.com.au/wp-content/themes/aspect/library/images/img-top-why.png');
-    background-position: center;
     background-size: 145%;
     background-repeat: no-repeat;
     background-position: bottom;
-    margin-bottom: 30px;
     background-color: #123C5E;
     background-attachment: scroll;
 }
@@ -34,14 +34,17 @@ iframe{
     font-size: 18px;
     font-weight: bold;
     display: block;
-    color: #2a2a2a;
+    color: #fff;
+    font-style: normal;
 }
 
 .tituloProd{
     text-align: center;
     font-size: 30px;
-    margin-bottom: 30px;
-    color: #123C5E;
+    margin-top: 45px;
+    color: #fff;
+    font-style: italic;
+    font-weight: 400;
 }
 
 .descripcion{
@@ -55,6 +58,7 @@ iframe{
 .subtitleProd{
     font-size: 28px;
     margin: 0;
+    margin-bottom: 30px;
     color: #fff;
 }
 
@@ -83,9 +87,10 @@ iframe{
     font-size: 16px;
     font-weight: 600;
     color: #fff;
+    text-align: center;
 }
 
-.inscribirse{
+.inscribirseBtn{
     border: none;
     font-size: 17px;
     font-weight: 600;
@@ -103,7 +108,7 @@ iframe{
     margin-top: 40px;
 }
   
-.inscribirse:hover{
+.inscribirseBtn:hover{
     background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
     background: #2a2a2a;
     color: #fff;
@@ -111,32 +116,39 @@ iframe{
     transition: .7s;
 }
 
+.count{
+    background-color: #4658F8;
+    margin-top: 50px;
+}
+
 @media (min-width: 768px) {
     .detailDiv{
-        justify-content: space-between;
+        margin-top: 0px;
     }
+
     .bannerProd{
         border-radius: 15px;
         background-size: 50%;
+        background-position-y: bottom;
+        background-position-x: right;
+        justify-content: flex-start;
+        align-items: center;
     }
-    .descProd{
-        border-radius: 15px;
+
+    .descycont{
+        padding: 0px;
+        align-items: space-between;
     }
 
     .cursoDe{
-        font-size: 28px;
+        font-size: 33px;
         font-weight: bold;
         display: block;
-        color: #2a2a2a;
     }
     
     .tituloProd{
         text-align: center;
-        font-size: 40px;
+        font-size: 45px;
         margin-bottom: 30px;
-        color: #123C5E;
-    }
-    iframe{
-        border-radius: 25px;
     }
 }

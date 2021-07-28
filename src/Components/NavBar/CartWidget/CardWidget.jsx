@@ -11,8 +11,8 @@ const CartWidget = () => {
   const { totalItems } = useContext(CartContext);
 
   return (
-    <NavLink to='/cart' className='col-4 col-lg-2 align cartDiv'>
-        <a href='/carrito' className='desk align carritoName'>Carrito <FontAwesomeIcon className='cartIcon' icon={faShoppingBag} /></a>
+    <NavLink to='/cart' className='col-4 col-lg-2 align cartDiv carritoName'>
+        <span className='desk align'>Carrito <FontAwesomeIcon className='cartIcon' icon={faShoppingBag} /></span>
         <FontAwesomeIcon className='cartIcon mobile' icon={faShoppingBag} />
         { totalItems 
         ? (<p className="itemsCount">{totalItems}</p>)

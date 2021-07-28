@@ -8,6 +8,7 @@ import Home from './Pages/Home/Home'
 import Detail from "./Pages/Detail/Detail";
 import Cursos from './Pages/Cursos/Cursos'
 import Carrito from './Pages/Carrito/Carrito'
+import PagoExitoso from './Pages/PagoExitoso/PagoExitoso'
 import Pagar from './Components/Pagar/Pagar'
 
 export default function Routes() {
@@ -28,6 +29,9 @@ export default function Routes() {
           </Route>
           <Route path="/pagar">
             <Pagar />
+          </Route>
+          <Route path="/pagoExitoso">
+            <PagoExitoso />
           </Route>
         </Switch>
     </Router>

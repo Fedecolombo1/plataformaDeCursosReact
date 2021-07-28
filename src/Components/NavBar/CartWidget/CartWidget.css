@@ -19,6 +19,7 @@ svg.cartIcon{
     bottom: 9px;
     right: 2px;
     margin: 0;
+    font-size: 12px;
 }
 
 @media (min-width: 768px) {
@@ -78,4 +79,12 @@ svg.cartIcon{
         transform: scaleX(1);
       }
 
+      .itemsCount{
+        width: 16px;
+        height: 16px;
+        bottom: 14px;
+        right: 11%;
+        margin: 0;
+        font-size: 11px;
+    }
 }

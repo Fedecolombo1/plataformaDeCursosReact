@@ -31,7 +31,7 @@
     background: rgb(250, 250, 250);
     border-radius: 100%;
     color: #4658F8;
-    transform: scale(1.1);
+    transform: scale(0.9);
     transition: .7s;
 }
 
@@ -42,8 +42,8 @@
     border-radius: 4px;
     text-decoration: none !important;
     background: linear-gradient( 105.3deg,  rgba(30,39,107,1) 21.8%, rgba(77,118,221,1) 100.2% );
-    background: #4658F8;
-    color: #fff;
+    background: #fff;
+    color: #4658F8;
     transform: scale(1.0);
     transition: .4s;
     padding: 10px 0px;
@@ -52,8 +52,8 @@
 
 .agregar:hover{
     background: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
-    background: #08E4D6;
-    color: #4658F8;
+    background: #2a2a2a;
+    color: #fff;
     transform: scale(1.01);
     transition: .4s;
 }
@@ -80,4 +80,8 @@
 .mostrar{
     display: block;
     text-align: center;
+}
+
+.white{
+    background-color: #fff !important;
 }

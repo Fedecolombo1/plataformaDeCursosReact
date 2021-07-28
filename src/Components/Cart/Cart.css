@@ -1,3 +1,7 @@
+.carritoTitle{
+    margin-top: 90px;
+}
+
 .itemCartContainer{
     margin-top: 20px;
     border-radius: 10px;
@@ -9,9 +13,11 @@
 }
 
 .itemContainer{
+    margin: 0;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 0;
+    justify-content: space-between;
 }
 
 .nombreProducto{
@@ -95,4 +101,15 @@
     padding-bottom: 12px;
     transform: scale(1.0);
     transition: .7s;
+}
+
+@media (min-width: 768px) {
+    .itemCartContainer{
+        width: 65%;
+    }
+
+    .carritoTitle{
+        font-size: 30px;
+        width: 65%;
+    }
 }

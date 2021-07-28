@@ -9,11 +9,15 @@ export const CartProvider = ({children}) => {
     const [saludo, setSaludo] = useState('Hola')
 
     const [Carrito, setCarrito] = useState()
-    console.log(Carrito);
 
     const [total, setTotal] = useState(0)
 
     const [totalItems, setTotalItems] = useState()
+
+    const [orderId, setOrderId] = useState(undefined)
+
+
+    
 
     /*const addItem = (newItem, quantity) => {
         for (const item of Carrito){
@@ -42,7 +46,8 @@ export const CartProvider = ({children}) => {
     const addItem = (newItem, quantity) => {
         if(Carrito !== undefined){
             for (let item of Carrito){
-                if(item.newItem.id !== newItem.id){
+                console.log(item);
+                if(newItem.id !== item.newItem.id){
                     setCarrito([...Carrito, {newItem, quantity}])
                     sumaTotal(newItem.price, quantity)
                     sumaContadorCarrito(quantity)
@@ -50,6 +55,7 @@ export const CartProvider = ({children}) => {
                     item.quantity = item.quantity + quantity
                     sumaTotal(newItem.price, quantity)
                     sumaContadorCarrito(quantity)
+                    localStorage.setItem('carrito', 'holAa')
                 }
             }
         }else{
@@ -75,25 +81,30 @@ export const CartProvider = ({children}) => {
         setTotal(0)
         setTotalItems()
     }
+    
 
-    const createOrder = () => {
+
+    const createOrder = (name, surname, number, email) => {
+
         const items = Carrito.map(
             ({newItem}) => ({
                 id: newItem.id,
                 title: newItem.title,
-                price: newItem.price
+                price: newItem.price,
             })
         )
 
         const newOrder = {
             buyer: {
-                name: 'Federico',
-                phone: 1167048339,
-                email: 'colombofederico17@gmail.com'
+                name: name,
+                surname: surname,
+                phone: number,
+                email: email
             }, 
             items,
             total,
-            date: firebase.firestore.Timestamp.fromDate(new Date())
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            estado: 'generada'
         }
 
         const db = dataBase;
@@ -101,14 +112,17 @@ export const CartProvider = ({children}) => {
 
         orders.add(newOrder).then(({id}) => {
             console.log(id);
+            setOrderId(id)
+            clear()
         }).catch(err => {
             console.log(err);
         })
 
     }
+
     
     return(
-        <CartContext.Provider value={{saludo, Carrito, addItem, removeItem, clear, total, totalItems, createOrder}}>
+        <CartContext.Provider value={{saludo, Carrito, addItem, removeItem, clear, total, totalItems, createOrder, orderId}}>
             {children}
         </CartContext.Provider>
     )
