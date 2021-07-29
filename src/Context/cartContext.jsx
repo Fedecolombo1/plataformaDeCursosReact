@@ -6,7 +6,6 @@ import '@firebase/firestore'
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [saludo, setSaludo] = useState('Hola')
 
     const [Carrito, setCarrito] = useState()
 
@@ -67,7 +66,7 @@ export const CartProvider = ({children}) => {
 
     const removeItem = (itemId, precio, quantity) => {
         const result = Carrito.filter(producto => producto.newItem.id !== itemId);
-        if(result == (0)){
+        if(result === (0)){
             setCarrito(undefined)
         } else {
             setCarrito(result)
@@ -122,7 +121,7 @@ export const CartProvider = ({children}) => {
 
     
     return(
-        <CartContext.Provider value={{saludo, Carrito, addItem, removeItem, clear, total, totalItems, createOrder, orderId}}>
+        <CartContext.Provider value={{Carrito, addItem, removeItem, clear, total, totalItems, createOrder, orderId}}>
             {children}
         </CartContext.Provider>
     )

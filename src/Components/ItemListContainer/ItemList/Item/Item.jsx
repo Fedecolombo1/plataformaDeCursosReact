@@ -59,7 +59,7 @@ const Item = () => {
         <div className="itemBox row align">
           { categoryId ? (<div className="col-12 align"><h1 className='col-12 col-lg-10'>Nuestros {categoryId}</h1></div>) : null }
           {Items.map((item) => (
-            <div className="product col-11 col-lg-4 col-xl-2 col-md-4 row align">
+            <div className="product col-11 col-lg-4 col-xl-2 col-md-4 row align" key={item[0].id}>
               <img className="col-12" src={item[0].pictureUrl} alt="imgCurso" />
               <div className="col-12 textProduct row">
                 <h1 className="col-12 titleP">{item[0].title}</h1>

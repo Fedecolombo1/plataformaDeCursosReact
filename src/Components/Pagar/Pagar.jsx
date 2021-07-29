@@ -1,7 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-import { Redirect } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const Pagar = () => {
     const [estado, setEstado] = useState('')

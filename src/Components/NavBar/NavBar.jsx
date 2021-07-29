@@ -1,13 +1,9 @@
 import "./NavBar.css";
 import './navMenu.css'
-import { faChevronDown, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Dropdown from "react-bootstrap/Dropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CardWidget from "./CartWidget/CardWidget";
 import { useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
-import { useState } from "react";
 
 const NavBar = () => {
   /* Burger menu
@@ -29,8 +25,6 @@ const NavBar = () => {
     quit.style.display = 'none';
   } */
 
-  const [mostrar, setMostrar] = useState("oculto");
-
   useEffect(() => {
     let progress = document.getElementById("progressbar");
     let totalHeight = document.body.scrollHeight - window.innerHeight;
@@ -40,13 +34,6 @@ const NavBar = () => {
     };
   }, []);
 
-  const onClickShow = () => {
-    if (mostrar === "oculto") {
-      setMostrar("mostrarNav");
-    } else {
-      setMostrar("oculto");
-    }
-  };
 
   return (
     <>

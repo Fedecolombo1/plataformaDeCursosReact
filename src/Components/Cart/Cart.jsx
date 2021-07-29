@@ -1,20 +1,19 @@
 import { CartContext } from "../../Context/cartContext";
 import { useContext } from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import img from "../../images/img-top-why.png";
 import "./Cart.css";
 import Form from "../Form/Form";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
 import { Fragment } from "react";
 
 const Cart = () => {
   const { Carrito, removeItem, total, clear } =
     useContext(CartContext);
 
-  const [linkMp, setLinkMp] = useState();
+  //const [linkMp, setLinkMp] = useState();
 
   const restar = (param) => {
     if (param > 1) {
@@ -28,14 +27,14 @@ const Cart = () => {
   };
 
   return (
-    <>
+    <Fragment>
       <h1 className="carritoTitle">Carrito de compras</h1>
       <div className="itemCartContainer row align col-12 col-lg-8">
         <div className="items">
           {Carrito !== undefined ? (
             <>
             {Carrito.map((carrito) => (
-              <div className="itemContainer row align col-12">
+              <div className="itemContainer row align col-12" key={carrito.newItem.id}>
                 <img
                   src={img}
                   alt=""
@@ -61,7 +60,7 @@ const Cart = () => {
                     </button>
                     <input
                       type="text"
-                      value={carrito.quantity}
+                      defaultValue={carrito.quantity}
                       className="valor col-3"
                     />
                     <button
@@ -126,7 +125,7 @@ const Cart = () => {
           )}
         </div>
       </div>
-    </>
+    </Fragment>
   );
 };
 
